@@ -4,12 +4,34 @@ import de.ur.mi.bouncer.apps.BouncerApp;
 
 public class RunningAround  extends BouncerApp {
 
-    /**
-     * Bouncers Aufgabe: Laufe entlang des Randes um die Karte. Höre nicht damit auf!
-     */
-
     @Override
     public void bounce() {
         loadMap("Empty");
+        runAround();
+    }
+
+    /**
+      * Bouncer bewegt sich in einer endlosen Folge am Kartenrand entlang
+      *
+      * Pre-Condition: Bouncer befindet sich auf dem Feld in der linken, unteren Ecke und blickt nach Westen
+      * Post-Condition: -
+     */
+    private void runAround() {
+        while(bouncer.canMoveForward()) {
+            moveForward();
+            bouncer.turnLeft();
+        }
+    }
+
+    /**
+     * Bouncer bewegt sich schrittweise nach vorn, bis er auf ein Hindernis stößt
+     *
+     * Pre-Conditions: -
+     * Post-Conditions: Bouncer steht vor einem nicht betretbarem Feld
+     */
+    private void moveForward() {
+        while(bouncer.canMoveForward()) {
+            bouncer.move();
+        }
     }
 }

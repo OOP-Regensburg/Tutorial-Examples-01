@@ -4,12 +4,27 @@ import de.ur.mi.bouncer.apps.BouncerApp;
 
 public class HelloBouncer extends BouncerApp {
 
-    /**
-     * Bouncers Aufgabe: Klettere auf das Hindernis und bleibe auf dem roten Feld stehen!
-     */
-
     @Override
     public void bounce() {
         loadMap("HelloBouncer");
+        bouncer.move();
+        climbObstacle();
+        bouncer.move();
+    }
+
+    /**
+     * Bouncer betritt das vor ihm liegende Hindernis
+     *
+     * Pre-Condition: Bouncer befindet sich direkt vor dem Hindernis und blickt nach Westen
+     * Post-Condition: Bouncer befindet sich über/auf dem ersten Feld des Hindernis
+     */
+    public void climbObstacle() {
+        bouncer.turnLeft();
+        bouncer.move();
+        bouncer.turnLeft();
+        bouncer.turnLeft();
+        bouncer.turnLeft();
+        bouncer.move();
+
     }
 }
