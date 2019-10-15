@@ -1,8 +1,13 @@
 package ClimbingStairs;
 
 import de.ur.mi.bouncer.apps.BouncerApp;
+import de.ur.mi.bouncer.apps.BouncerLauncher;
 
 public class ClimbingStairs extends BouncerApp {
+
+    public static void main(String[] args) {
+        BouncerLauncher.launch("ClimbingStairs");
+    }
 
     @Override
     public void bounce() {

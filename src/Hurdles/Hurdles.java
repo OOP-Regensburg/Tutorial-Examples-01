@@ -1,8 +1,14 @@
 package Hurdles;
 
 import de.ur.mi.bouncer.apps.BouncerApp;
+import de.ur.mi.bouncer.apps.BouncerLauncher;
 
 public class Hurdles extends BouncerApp {
+
+
+    public static void main(String[] args) {
+        BouncerLauncher.launch("Hurdles");
+    }
 
     @Override
     public void bounce() {
